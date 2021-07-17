@@ -45,7 +45,7 @@ a {
   --table-row-bg-color: #FFF;
   --table-text-color: #828282;
   /* images */
-  --logo-url: url('./images/_logo.svg');
+  --logo-url: url('./images/logo.svg');
   --dark-mode-icon: url('./images/darkmode-on.svg');
   --sort-icon: url('./images/sort.svg');
   --action-icon: url('./images/menu-light.svg');
@@ -62,7 +62,7 @@ a {
   --table-header-bg-color: #2E2E2E;
   --table-row-bg-color: #3A3A3A;
   --table-text-color: #FFF;
-  --logo-url: url('./images/_logo-dark.svg');
+  --logo-url: url('./images/logo-dark.svg');
   --dark-mode-icon: url('./images/darkmode-off.svg');
   --sort-icon: url('./images/sort-dark.svg');
   --action-icon: url('./images/menu-dark.svg');
