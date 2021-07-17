@@ -8,7 +8,7 @@ function toggleMenu (event) {
   }
 }
 
-function darkModeToggleHandler (event) {
+function toggleDarkMode (event) {
   if (event.target.checked) {
     document.documentElement.setAttribute('data-theme', 'dark')
   } else {
@@ -16,7 +16,7 @@ function darkModeToggleHandler (event) {
   }
 }
 
-function toggleHighlight (event) {
+function toggleRowHighlight (event) {
   if (event.target.checked) {
     event.target.closest('.table__row').setAttribute('data-theme', 'highlight')
   } else {
@@ -24,6 +24,6 @@ function toggleHighlight (event) {
   }
 }
 
-darkModeToggle.addEventListener('change', darkModeToggleHandler)
+darkModeToggle.addEventListener('change', toggleDarkMode)
 tableBody.addEventListener('click', toggleMenu)
-tableBody.addEventListener('change', toggleHighlight)
+tableBody.addEventListener('change', toggleRowHighlight)
