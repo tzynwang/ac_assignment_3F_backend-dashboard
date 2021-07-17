@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* reset start */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+table {
+  border: none;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+th {
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* reset end */
+
+:root {
+  --gray: #E4E4E4;
+  --highlight: #FD891E;
+  /* light mode */
+  --main: #03396A;
+  --bg: #F3F3F3;
+  --text-color: #000;
+  --zebra-color: #E9E9E9;
+  --header-color: #CDCDCD;
+  --header-text-color: #000;
+  --table-header-bg-color: #CDCDCD;
+  --table-row-bg-color: #FFF;
+  --table-text-color: #828282;
+  /* images */
+  --logo-url: url('./images/_logo.svg');
+  --dark-mode-icon: url('./images/darkmode-on.svg');
+  --sort-icon: url('./images/sort.svg');
+  --sort-icon: url('./images/sort.svg');
+  --action-icon: url('./images/menu-light.svg');
+}
+
+[data-theme="dark"] {
+  --main: #3A3A3A;
+  --bg: #202020;
+  --text-color: #FFF;
+  --zebra-color: #575757;
+  --header-color: #2E2E2E;
+  --header-text-color: #AAAAAA;
+  --table-header-bg-color: #2E2E2E;
+  --table-row-bg-color: #3A3A3A;
+  --logo-url: url('./images/_logo-dark.svg');
+  --dark-mode-icon: url('./images/darkmode-off.svg');
+  --sort-icon: url('./images/sort-dark.svg');
+  --action-icon: url('./images/menu-dark.svg');
+}
+
+[data-theme="highlight"] {
+  --table-row-bg-color: #FD891E;
+  --zebra-color: #FD891E;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: var(--bg);
+  color: var(--text-color);
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  transition: .15s;
+}
+
+.sidebar {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  background-color: var(--main);
+}
+
+.sidebar__home {
+  width: 100px;
+  margin-bottom: 83px;
+  cursor: pointer;
+}
+
+.sidebar__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar__menu__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.sidebar__menu__link--active {
+  background: #FFF;
+}
+
+.sidebar__menu>div:not(:last-child) {
+  margin-bottom: 55px;
+}
+
+.sidebar__darkmode__label {
+  background: var(--dark-mode-icon);
+  background-size: 100% 100%;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar__darkmode__input {
+  display: none;
+}
+
+.main {
+  flex: 1;
+  padding: 42px 50px 68px 50px;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.main__title {
+  margin-bottom: 34px;
+  font-size: 48px;
+  color: var(--text-color);
+}
+
+.main__table {
+  background: var(--table-header-bg-color);
+}
+
+.table__header {
+  color: var(--header-text-color);
+  background-color: var(--table-header-bg-color);
+}
+
+.table__row {
+  height: 50px;
+}
+
+.table__header,
+.table__body .table__row {
+  max-width: 80vw;
+  display: table;
+  table-layout: fixed;
+}
+
+.table__body {
+  height: 62vh;
+  display: block;
+  overflow-y: scroll;
+}
+
+.table__body .table__row {
+  background-color: var(--table-row-bg-color);
+  color: var(--header-text-color);
+}
+
+.table__body .table__row:nth-child(even) {
+  background-color: var(--zebra-color);
+}
+
+.table__cell {
+  text-align: center;
+}
+
+/* 這些寬度到底怎麼推敲出來的？ */
+.table__cell--checkbox {
+  width: 50px;
+}
+
+.table__cell--id {
+  width: 80px;
+}
+
+.table__cell--name {
+  width: 140px;
+}
+
+.table__cell--advertiser {
+  width: 140px;
+}
+
+.cell__advertiser__line {
+  display: block;
+}
+
+.cell__advertiser__line--group {
+  color: var(--table-text-color);
+}
+
+.table__cell--description {
+  width: 200px;
+}
+
+.table__cell--price {
+  width: 140px;
+  position: relative;
+}
+
+.table__cell--starttime {
+  width: 140px;
+  position: relative;
+}
+
+.table__cell--endtime {
+  width: 140px;
+  position: relative;
+}
+
+.table__cell--actions {
+  width: 210px;
+  position: relative;
+}
+
+.cell__actions__icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: var(--action-icon);
+  cursor: pointer;
+}
+
+.header__cell__icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.header__cell__icon {
+  background: var(--sort-icon);
+}
+
+.header__cell__icon--right {
+  position: absolute;
+  right: 0;
+}
+
+.actions__menu {
+  width: 140px;
+  height: 120px;
+  position: absolute;
+  right: 50%;
+  top: 100%;
+  z-index: 99;
+  background-color: var(--table-row-bg-color);
+  border: 1px solid var(--header-color);
+}
+
+.hidden {
+  display: none;
+}
+
+.menu__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__item {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  transition: .15s;
+  cursor: pointer;
+}
+
+.menu__item:hover {
+  background-color: var(--highlight);
+}
+
+.menu__item__icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 14px;
+}
