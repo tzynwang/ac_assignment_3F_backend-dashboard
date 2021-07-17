@@ -38,15 +38,15 @@ a {
   --bg: #F3F3F3;
   --text-color: #000;
   --zebra-color: #E9E9E9;
-  --header-color: #CDCDCD;
+  --border-color: #CDCDCD;
   --header-text-color: #000;
+  --table-gray-text: #828282;
   --table-header-bg-color: #CDCDCD;
   --table-row-bg-color: #FFF;
   --table-text-color: #828282;
   /* images */
   --logo-url: url('./images/_logo.svg');
   --dark-mode-icon: url('./images/darkmode-on.svg');
-  --sort-icon: url('./images/sort.svg');
   --sort-icon: url('./images/sort.svg');
   --action-icon: url('./images/menu-light.svg');
 }
@@ -56,10 +56,12 @@ a {
   --bg: #202020;
   --text-color: #FFF;
   --zebra-color: #575757;
-  --header-color: #2E2E2E;
+  --border-color: #2E2E2E;
   --header-text-color: #AAAAAA;
+  --table-gray-text: rgba(255, 255, 255, .4);
   --table-header-bg-color: #2E2E2E;
   --table-row-bg-color: #3A3A3A;
+  --table-text-color: #FFF;
   --logo-url: url('./images/_logo-dark.svg');
   --dark-mode-icon: url('./images/darkmode-off.svg');
   --sort-icon: url('./images/sort-dark.svg');
@@ -180,8 +182,9 @@ body {
   background-color: var(--zebra-color);
 }
 
-.table__cell {
+.table__body .table__cell {
   text-align: center;
+  color: var(--table-text-color);
 }
 
 /* 這些寬度到底怎麼推敲出來的？ */
@@ -206,7 +209,7 @@ body {
 }
 
 .cell__advertiser__line--group {
-  color: var(--table-text-color);
+  color: var(--table-gray-text);
 }
 
 .table__cell--description {
@@ -265,7 +268,7 @@ body {
   top: 100%;
   z-index: 99;
   background-color: var(--table-row-bg-color);
-  border: 1px solid var(--header-color);
+  border: 1px solid var(--border-color);
 }
 
 .hidden {
